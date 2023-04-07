@@ -1,17 +1,22 @@
 {
   "name": "social-network-api-18",
   "version": "1.0.0",
-  "description": "",
+  "description": "Social Network API",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server",
+    "seed": "node utils/seed"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JairoPJM/social-network-api-18"
+  },
   "dependencies": {
+    "date-and-time": "^2.4.3",
     "express": "^4.18.2",
     "mongoose": "^7.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
   }
 }
