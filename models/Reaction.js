@@ -2,18 +2,18 @@ const { Schema, Types } = require("mongoose");
 const date = require("date-and-time");
 
 // Define subdocument schema to be used in Post model
-const commentSchema = new Schema(
+const reactionSchema = new Schema(
   {
-    commentId: {
+    reactionId: {
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId(),
     },
-    commentBody: {
+    reactionBody: {
       type: String,
       required: true,
       maxlength: 280,
     },
-    commenterName: {
+    userName: {
       type: String,
       required: true,
     },
@@ -33,4 +33,4 @@ const commentSchema = new Schema(
   }
 );
 
-module.exports = commentSchema;
+module.exports = reactionSchema;

@@ -10,7 +10,7 @@ const {
   deleteExistingReaction
 } = require("../../controllers/thoughtController");
 
-// /api/thoughtsz
+// /api/thoughts
 router
   .route("/")
   .get(getAllThoughts)

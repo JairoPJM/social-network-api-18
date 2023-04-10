@@ -3,33 +3,38 @@ const { Thought, User } = require("../models");
 module.exports = {
   getAllThoughts(req, res) {
     Thought.find()
-      .then((thoughts) => res.json(thoughts))
-      .catch((err) => res.status(500).json(err));
+      .then(async(thoughts) => {return res.json(thoughts);
+      })
+      .catch((err) => {return res.status(500).json(err)
+      });
   },
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
-      .then((thought) =>
+    .select('-__V')
+      .then(async(thought) =>
         !thought
           ? res.status(404).json({ message: "No thought found with that ID" })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
   },
+
   createNewThought(req, res) {
     Thought.create(req.body)
-      .then(({ _id }) => {
-          User.findOneAndUpdate(
-          { _id: req.body.userId },
-          { $push: { thoughts: _id } },
+      .then((newThought) => {
+         return User.findOneAndUpdate(
+          { userName: req.body.userName },
+          { $push: { thoughts: newThought._id } },
           { new: true }
         )
       })
-      .then((thought) =>
-        !thought
+      .then((userData) =>
+        !userData
           ? res.status(404).json({ message: "No thought found with that ID" })
-          : res.json(thought)
+          : res.json(userData)
       )
       .catch((err) => res.status(500).json(err));
+
   },
   updateExistingThought(req, res) {
     Thought.findOneAndUpdate(
