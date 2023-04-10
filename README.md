@@ -7,7 +7,7 @@
  <h1 align="center">social-network-api-18</h1>
 
 ## Description 
-This application allows you edit users for a backend database of mongo
+This application allows you edit users for a backend database with mongo
 ## Acceptance Criteria 📩
 ~~~
 GIVEN a social network API
