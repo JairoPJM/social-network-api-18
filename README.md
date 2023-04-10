@@ -77,8 +77,8 @@ OTHER DEALINGS IN THE SOFTWARE.
   
   ## Questions
 
-    If you have any questions you can email me using this email
+If you have any questions you can email me using this email
 (Gmail)-https://Jairomacassi@gmail.com
 
-    You can see my other projects here
+You can see my other projects here
 (Github)-https://github.com/JairoPJM
